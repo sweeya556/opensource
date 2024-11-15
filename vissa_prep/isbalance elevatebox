@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read the size of the array
+    scanf("%d", &N);
+    
+    int A[N];
+    
+    // Read the elements of the array
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &A[i]);
+    }
+    
+    // Calculate the total sum of the array
+    int total_sum = 0;
+    for (int i = 0; i < N; i++) {
+        total_sum += A[i];
+    }
+    
+    int left_sum = 0;
+    int right_sum = total_sum;
+    
+    // Array to store the balance values
+    int B[N];
+    
+    // Calculate the balance for each element
+    for (int i = 0; i < N; i++) {
+        // Update the right_sum to exclude the current element
+        right_sum -= A[i];
+        
+        // Calculate the balance for the current element
+        B[i] = (left_sum > right_sum) ? (left_sum - right_sum) : (right_sum - left_sum);
+        
+        // Update the left_sum to include the current element for the next iteration
+        left_sum += A[i];
+    }
+    
+    // Print the balance array
+    for (int i = 0; i < N; i++) {
+        printf("%d ", B[i]);
+    }
+    
+    printf("\n");
+    
+    return 0;
+}
