@@ -1,0 +1,29 @@
+def find_pair(arr, k):
+    # Initialize an empty set to keep track of elements we've seen so far
+    seen = set()
+    
+    # Traverse through the array
+    for num in arr:
+        # Calculate the required pair that sums up to k
+        target = k - num
+        
+        # Check if the required pair is already in the set
+        if target in seen:
+            return True  # Pair found
+        
+        # Add the current number to the set
+        seen.add(num)
+    
+    # If no pair is found
+    return False
+
+# Input
+N = int(input())  # Size of the array
+arr = list(map(int, input().split()))  # Array elements
+k = int(input())  # The target sum
+
+# Output
+if find_pair(arr, k):
+    print("true")
+else:
+    print("false")
