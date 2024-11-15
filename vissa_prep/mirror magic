@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read the size of the matrix
+    scanf("%d", &N);
+    
+    int matrix[N][N];
+    
+    // Read the matrix elements
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    
+    // Generate and print the mirror image of the matrix
+    for (int i = 0; i < N; i++) {
+        for (int j = N - 1; j >= 0; j--) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
