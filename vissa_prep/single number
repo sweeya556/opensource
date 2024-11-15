@@ -1,0 +1,16 @@
+def find_single_number(arr):
+    result = 0
+    for num in arr:
+        result ^= num  # XOR each number with result
+    return result
+
+def main():
+    # Read input
+    N = int(input())  # Read the size of the array
+    arr = list(map(int, input().split()))  # Read the array of integers
+    
+    # Find the number that appears only once
+    print(find_single_number(arr))
+
+if __name__ == "__main__":
+    main()
