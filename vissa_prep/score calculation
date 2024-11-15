@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T); // Read the number of test cases
+    
+    while (T--) {
+        int X, N;
+        scanf("%d %d", &X, &N); // Read the total points and number of test cases passed
+        
+        // Calculate the points per test case
+        int points_per_test_case = X / 10;
+        
+        // Calculate the total score
+        int score = points_per_test_case * N;
+        
+        // Print the score for this test case
+        printf("%d\n", score);
+    }
+    
+    return 0;
+}
