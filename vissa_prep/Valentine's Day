@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main() {
+    int X, Y;
+    scanf("%d %d", &X, &Y);
+    int max_chocolates = X / Y;
+    printf("%d\n", max_chocolates);
+    return 0;
+}
