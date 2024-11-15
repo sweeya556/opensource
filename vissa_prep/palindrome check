@@ -1,0 +1,17 @@
+def check_palindrome(S):
+    # Check if the string is equal to its reverse
+    if S == S[::-1]:
+        print("TRUE")
+    else:
+        print("FALSE")
+
+# Main function to handle input and call the palindrome check function
+def main():
+    # Read the input string
+    S = input().strip()
+    
+    # Check if the string is palindrome
+    check_palindrome(S)
+
+if __name__ == "__main__":
+    main()
