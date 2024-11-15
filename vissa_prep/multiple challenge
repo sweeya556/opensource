@@ -1,0 +1,16 @@
+def count_multiples(N, x):
+    return N // x
+
+def count_divisible_by_3_or_5(N):
+    count_3 = count_multiples(N, 3)
+    count_5 = count_multiples(N, 5)
+    count_15 = count_multiples(N, 15)
+    
+    # Using inclusion-exclusion principle
+    return count_3 + count_5 - count_15
+
+# Input
+N = int(input())
+
+# Output the result
+print(count_divisible_by_3_or_5(N))
