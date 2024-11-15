@@ -1,0 +1,23 @@
+def print_triangles(N):
+    # Loop through each row from 1 to N
+    for i in range(1, N + 1):
+        # Print the left triangle (1 to i)
+        for j in range(1, i + 1):
+            print(j, end="")
+        
+        # Print the spaces in between (2 * (N - i) spaces)
+        for k in range(2 * (N - i)):
+            print(" ", end="")
+        
+        # Print the right triangle (i to 1)
+        for j in range(i, 0, -1):
+            print(j, end="")
+        
+        # Move to the next line
+        print()
+
+# Input for the height of the triangles
+N = int(input())
+
+# Function call to print the two triangles
+print_triangles(N)
