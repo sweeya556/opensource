@@ -1,0 +1,8 @@
+# Read the input values
+X, Y, Z = map(int, input().split())
+
+# Calculate the maximum number of mangoes that can be loaded
+max_mangoes = (Z - Y) // X if Z >= Y else 0
+
+# Output the result
+print(max_mangoes)
