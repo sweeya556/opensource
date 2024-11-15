@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int T;  // number of test cases
+    scanf("%d", &T);  // Read the number of test cases
+    
+    while (T--) {
+        int N, M;  // N: number of students, M: number of tickets
+        scanf("%d %d", &N, &M);  // Read the values of N and M
+        
+        // Calculate the number of students who cannot get tickets
+        if (N > M) {
+            printf("%d\n", N - M);  // Students who won't get tickets
+        } else {
+            printf("0\n");  // All students can get tickets
+        }
+    }
+
+    return 0;
+}
