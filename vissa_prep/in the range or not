@@ -1,0 +1,18 @@
+def can_binary_hear(X):
+    # Check if the frequency is within the audible range
+    if 67 <= X <= 45000:
+        return "YES"
+    else:
+        return "NO"
+
+def main():
+    # Reading number of test cases
+    T = int(input())
+    
+    # Process each test case
+    for _ in range(T):
+        X = int(input())
+        print(can_binary_hear(X))
+
+if __name__ == "__main__":
+    main()
