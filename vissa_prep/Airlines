@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int X, N;
+    scanf("%d %d", &X, &N);
+    int current_capacity = X * 100;
+    if (current_capacity >= N) {
+        printf("0\n");
+    } else {
+        int remaining_passengers = N - current_capacity;
+        int new_planes_required = (remaining_passengers + 99) / 100;
+        printf("%d\n", new_planes_required);
+    }
+    
+    return 0;
+}
