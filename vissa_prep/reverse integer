@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <limits.h>  // for INT_MAX and INT_MIN
+
+int reverse(int n) {
+    int reversed = 0;
+    
+    while (n != 0) {
+        int digit = n % 10;  // Get the last digit
+        n /= 10;  // Remove the last digit
+        
+        // Check for overflow before updating the reversed number
+        if (reversed > INT_MAX / 10 || (reversed == INT_MAX / 10 && digit > 7)) {
+            return 0;  // Positive overflow
+        }
+        if (reversed < INT_MIN / 10 || (reversed == INT_MIN / 10 && digit < -8)) {
+            return 0;  // Negative overflow
+        }
+        
+        reversed = reversed * 10 + digit;
+    }
+    
+    return reversed;
+}
+
+int main() {
+    int n;
+    // Read the integer input
+    scanf("%d", &n);
+    
+    // Reverse the integer and print the result
+    printf("%d\n", reverse(n));
+    
+    return 0;
+}
